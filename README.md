@@ -12,7 +12,11 @@ $ go build .
 
 # How to use
 ```
-$ etcdhelper-main -endpoint "http://localhost:2379" get /kubernetes.io/config.openshift.io/clusterversions/version --prefix --keys-only
+$ etcdhelper-main \
+-endpoint "http://localhost:2379" \
+get /kubernetes.io/config.openshift.io/clusterversions/version --prefix --keys-only
+```
+```
 INFO: Key /kubernetes.io/config.openshift.io/clusterversions/version:
 config.openshift.io/v1, Kind=ClusterVersion
 apiVersion: config.openshift.io/v1
