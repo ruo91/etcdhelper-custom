@@ -3,7 +3,7 @@ package main
 import (
 	"bytes"
 	"context"
-	"crypto/tls"
+	//"crypto/tls"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -84,7 +84,7 @@ func main() {
 
 	config := clientv3.Config{
 		Endpoints:   []string{endpoint},
-		TLS:         tlsConfig,
+		//TLS:         tlsConfig,
 		DialTimeout: 5 * time.Second,
 	}
 	client, err := clientv3.New(config)
