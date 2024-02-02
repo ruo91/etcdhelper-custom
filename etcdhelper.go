@@ -13,7 +13,7 @@ import (
 	jsonserializer "k8s.io/apimachinery/pkg/runtime/serializer/json"
 	"k8s.io/kubectl/pkg/scheme"
 
-	"go.etcd.io/etcd/client/pkg/v3/transport"
+	//"go.etcd.io/etcd/client/pkg/v3/transport"
 	"go.etcd.io/etcd/clientv3"
 
 	"github.com/openshift/api"
@@ -25,11 +25,14 @@ func init() {
 }
 
 func main() {
-	var endpoint, keyFile, certFile, caFile string
+	//var endpoint, keyFile, certFile, caFile string
+	var endpoint string
 	flag.StringVar(&endpoint, "endpoint", "https://127.0.0.1:2379", "etcd endpoint.")
+        /*
 	flag.StringVar(&keyFile, "key", "/etc/kubernetes/pki/etcd/server.key", "TLS client key.")
 	flag.StringVar(&certFile, "cert", "/etc/kubernetes/pki/etcd/server.crt", "TLS client certificate.")
 	flag.StringVar(&caFile, "cacert", "/etc/kubernetes/pki/etcd/ca.crt", "Server TLS CA certificate.")
+        */
 	flag.Parse()
 
 	if flag.NArg() == 0 {
@@ -62,6 +65,7 @@ func main() {
 		value = flag.Arg(2)
 	}
 
+        /*
 	var tlsConfig *tls.Config
 	if len(certFile) != 0 || len(keyFile) != 0 || len(caFile) != 0 {
 		tlsInfo := transport.TLSInfo{
@@ -76,6 +80,7 @@ func main() {
 			os.Exit(1)
 		}
 	}
+        */
 
 	config := clientv3.Config{
 		Endpoints:   []string{endpoint},
