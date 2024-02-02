@@ -6,7 +6,7 @@ jsonserializer.NewSerializerWithOptions.
 # Build
 ```
 $ git clone https://github.com/ruo91/etcdhelper-custom.git
-$ cd /etcdhelper-custom
+$ cd etcdhelper-custom
 $ go build .
 $ cp etcdhelper-main /usr/bin/
 ```
