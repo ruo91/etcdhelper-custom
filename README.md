@@ -15,7 +15,7 @@ $ cp etcdhelper-main /usr/bin/
 ```
 $ etcdhelper-main \
 -endpoint "http://localhost:2379" \
-get /kubernetes.io/config.openshift.io/clusterversions/version --prefix --keys-only
+get /kubernetes.io/config.openshift.io/clusterversions/version
 ```
 ```
 INFO: Key /kubernetes.io/config.openshift.io/clusterversions/version:
